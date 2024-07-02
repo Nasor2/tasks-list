@@ -1,9 +1,10 @@
-import Pencil from "../assets/images/pencil.png"
-export default function Header(props){
+import Pencil from "../assets/images/pencil.png";
+
+export default function Header(props) {
     return (
-        <div class="flex items-center justify-center gap-8">
-            <h1 class="italic font-serif text-5xl font-bold text-center my-2" >{props.titulo}</h1>
-            <img class="w-20"src={Pencil} alt="Lapiz"/>
+        <div className="flex items-center justify-between p-4 bg-purple-200 rounded-t-lg">
+            <h1 className="text-xl font-bold">{props.titulo}</h1>
+            <img className="w-8" src={Pencil} alt="Lapiz" />
         </div>
-    )
-} 
+    );
+}

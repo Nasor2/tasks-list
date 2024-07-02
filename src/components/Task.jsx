@@ -1,14 +1,15 @@
+import React from 'react';
 
-export default function Task(props) {
+export default function Task({ id, task_text, completed, estadoTask, forceUpdate }) {
     return (
-        <li key={props.id} class="border-solid border-2 border-slate-500 p-2 mb-1 flex items-center">
+        <li className="flex items-center bg-purple-100 rounded-lg p-2 mb-2">
             <input
-                class="mr-2"
                 type="checkbox"
-                checked={props.completed}
-                onChange={() => props.estadoTask(props.id, props.forceUpdate)}
+                className="form-checkbox h-4 w-4 text-purple-600 mr-2"
+                checked={completed}
+                onChange={() => estadoTask(id, forceUpdate)}
             />
-            <span class={props.completed ? 'line-through' : ''}>{props.task_text}</span>
+            <span className={completed ? "line-through text-gray-400" : "text-gray-700"}>{task_text}</span>
         </li>
     );
 }
